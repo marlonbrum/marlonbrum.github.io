@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "styles.css",
+	"sources": [
+		"styles.scss",
+		"_sass/main.scss"
+	],
+	"sourcesContent": [
+		"@import \"main\";",
+		"html {\r\n    font: Roboto, sans-serif;\r\n}\r\n.current {\r\n    color: white;\r\n    background-color: navy;\r\n}\r\n\r\nnav {\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n\r\nnav a {\r\n    display: block;\r\n    padding: 0.5em;\r\n    background-color: lightblue;\r\n    text-transform: capitalize;\r\n    text-decoration: none;\r\n    min-width: 80px;\r\n    text-align: center;\r\n    margin-right: 10px;\r\n    color: black;\r\n}"
+	],
+	"names": [],
+	"mappings": "ACAA,AAAA,IAAI,CAAC,EACD,IAAI,EAAE,kBAAkB,GAC3B;;AACD,AAAA,QAAQ,CAAC,EACL,KAAK,EAAE,KAAK,EACZ,gBAAgB,EAAE,IAAI,GACzB;;AAED,AAAA,GAAG,CAAC,EACA,OAAO,EAAE,IAAI,EACb,cAAc,EAAE,GAAG,GACtB;;AAED,AAAA,GAAG,CAAC,CAAC,CAAC,EACF,OAAO,EAAE,KAAK,EACd,OAAO,EAAE,KAAK,EACd,gBAAgB,EAAE,SAAS,EAC3B,cAAc,EAAE,UAAU,EAC1B,eAAe,EAAE,IAAI,EACrB,SAAS,EAAE,IAAI,EACf,UAAU,EAAE,MAAM,EAClB,YAAY,EAAE,IAAI,EAClB,KAAK,EAAE,KAAK,GACf"
+}

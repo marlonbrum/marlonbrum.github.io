@@ -1,4 +1,8 @@
 - name: Principal
   link: /
+- name: Blog
+  link: /blog.html
 - name: Sobre
   link: /about.html 
+- name: Staff
+  link: /staff.html
