@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Márlon Medeiros Brum — Engenheiro de Software | Software Engineer</title>
+    <meta name="description" content="Engenheiro de Software com 27 anos de experiência. Desenvolvimento .NET, PHP, Python, IA, bancos de dados SQL Server e MySQL. Consultoria, liderança e entrega de soluções." />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Márlon Medeiros Brum — Engenheiro de Software" />
+    <meta property="og:description" content="27 anos de experiência em desenvolvimento de software. Backend, Frontend, Mobile, Bancos de Dados, IA." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://marlonbrum.github.io/" />
+
+    <!-- Icons & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!-- Schema.org Person -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Márlon Medeiros Brum",
+        "jobTitle": "Software Engineer",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Guarulhos",
+          "addressRegion": "SP",
+          "addressCountry": "BR"
+        },
+        "email": "mailto:marlon.brum@gmail.com",
+        "telephone": "+55-11-97649-6027",
+        "url": "https://marlonbrum.github.io/"
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-content">
+        <a class="brand" href="#" aria-label="Home">
+          <span class="brand-avatar">
+            <img src="assets/img/avatar.jpg" alt="Foto de perfil de Márlon Medeiros Brum" />
+          </span>
+          <span class="brand-text">
+            <strong>Márlon Medeiros Brum</strong>
+            <small data-i18n="role">Engenheiro de Software</small>
+          </span>
+        </a>
+
+        <nav class="main-nav" aria-label="Primary">
+          <a href="#about" data-i18n="nav_about">Sobre</a>
+          <a href="#experience" data-i18n="nav_experience">Experiência</a>
+          <a href="#skills" data-i18n="nav_skills">Habilidades</a>
+          <a href="#education" data-i18n="nav_education">Formação</a>
+          <a href="#languages" data-i18n="nav_languages">Idiomas</a>
+          <a href="#contact" data-i18n="nav_contact">Contato</a>
+        </nav>
+
+        <div class="actions">
+          <div class="lang-switch" role="group" aria-label="Language switcher">
+            <button class="lang-btn" data-lang="pt" aria-pressed="true">PT</button>
+            <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+          </div>
+          <a class="btn primary" href="mailto:marlon.brum@gmail.com" data-i18n="cta_hire">Contratar</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-text">
+            <h1>
+              <span data-i18n="hero_greeting">Olá, sou </span>
+              <span class="accent">Márlon</span>
+            </h1>
+            <p class="lead" data-i18n="hero_subtitle">
+              Engenheiro de Software com 27 anos de experiência em desenvolvimento, liderança técnica e entrega de soluções robustas.
+            </p>
+            <ul class="quick-facts">
+              <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <span>Guarulhos - SP</span></li>
+              <li><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:marlon.brum@gmail.com">marlon.brum@gmail.com</a></li>
+              <li><i class="fa-solid fa-phone" aria-hidden="true"></i> <a href="tel:+5511976496027">+55 (11) 9 7649-6027</a></li>
+            </ul>
+            <div class="hero-ctas">
+              <a class="btn primary" href="#contact" data-i18n="cta_contact">Entrar em contato</a>
+              <a class="btn ghost" href="curriculo.md" target="_blank" rel="noopener" data-i18n="cta_cv">Ver currículo (PT-BR)</a>
+            </div>
+          </div>
+          <div class="hero-media">
+            <figure class="profile">
+              <img src="assets/img/avatar.jpg" alt="Foto de perfil de Márlon Medeiros Brum" />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- About / Presentation -->
+      <section id="about" class="section">
+        <div class="container">
+          <h2 class="section-title"><i class="fa-solid fa-user-tie" aria-hidden="true"></i> <span data-i18n="about_title">Apresentação</span></h2>
+          <div class="card">
+            <p data-i18n="about_text">
+              Profissional com 27 anos de experiência em desenvolvimento de software, atuando em .NET, PHP, Python e Inteligência Artificial. Trabalhei com SQL Server e MySQL, análise de sistemas e relacionamento com clientes. Minha vivência de longo prazo me permite aprender rapidamente qualquer nova tecnologia e entregar valor com consistência, seja em projetos freelance, contratos parciais ou posições em tempo integral.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="section alt">
+        <div class="container">
+          <h2 class="section-title"><i class="fa-solid fa-briefcase" aria-hidden="true"></i> <span data-i18n="exp_title">Experiência</span></h2>
+          <div id="exp-list" class="timeline"><!-- populated by JS --></div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="section">
+        <div class="container">
+          <h2 class="section-title"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> <span data-i18n="skills_title">Habilidades</span></h2>
+          <div id="skills-grid" class="grid skills-grid"><!-- populated by JS --></div>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section id="education" class="section alt">
+        <div class="container">
+          <h2 class="section-title"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> <span data-i18n="edu_title">Formação Acadêmica</span></h2>
+          <div id="edu-list" class="list"><!-- populated by JS --></div>
+        </div>
+      </section>
+
+      <!-- Languages -->
+      <section id="languages" class="section">
+        <div class="container">
+          <h2 class="section-title"><i class="fa-solid fa-language" aria-hidden="true"></i> <span data-i18n="langs_title">Idiomas</span></h2>
+          <ul class="chips" id="lang-list"><!-- populated by JS --></ul>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section alt">
+        <div class="container">
+          <h2 class="section-title"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> <span data-i18n="contact_title">Contato</span></h2>
+          <div class="contact-cards">
+            <a class="contact-card" href="mailto:marlon.brum@gmail.com">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <strong>Email</strong>
+                <span>marlon.brum@gmail.com</span>
+              </div>
+            </a>
+            <a class="contact-card" href="tel:+5511976496027">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <strong data-i18n="phone">Telefone</strong>
+                <span>+55 (11) 9 7649-6027</span>
+              </div>
+            </a>
+            <div class="contact-card" aria-label="Location">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <strong data-i18n="location_label">Localização</strong>
+                <span>Guarulhos - SP</span>
+              </div>
+            </div>
+      <!-- Social profiles -->
+      <a class="contact-card" href="https://github.com/marlonbrum" target="_blank" rel="noopener noreferrer" title="GitHub: marlonbrum">
+              <i class="fa-brands fa-github"></i>
+              <div>
+                <strong>GitHub</strong>
+        <span>github.com/marlonbrum</span>
+              </div>
+            </a>
+      <a class="contact-card" href="https://www.linkedin.com/in/marlonbrum/" target="_blank" rel="noopener noreferrer" title="LinkedIn: marlonbrum">
+              <i class="fa-brands fa-linkedin"></i>
+              <div>
+                <strong>LinkedIn</strong>
+        <span>linkedin.com/in/marlonbrum</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <small>&copy; <span id="year"></span> Márlon Medeiros Brum • <span data-i18n="footer_availability">Disponível para freelance, meio período ou tempo integral</span></small>
+      </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+  </body>
+  </html>

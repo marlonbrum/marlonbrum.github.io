@@ -1,0 +1,15 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6dd3fb"/>
+      <stop offset="1" stop-color="#a3ffcb"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="24" fill="#0b0d12"/>
+  <circle cx="200" cy="150" r="80" fill="url(#g)" fill-opacity="0.12" stroke="#6dd3fb" stroke-opacity="0.2" stroke-width="2"/>
+  <circle cx="200" cy="150" r="72" fill="#10131a"/>
+  <circle cx="200" cy="150" r="56" fill="#0d1017" stroke="#6dd3fb" stroke-opacity="0.25"/>
+  <rect x="70" y="250" width="260" height="110" rx="24" fill="#10131a" stroke="#a3ffcb" stroke-opacity="0.2"/>
+  <path d="M200 210c-40 0-72 32-72 72h144c0-40-32-72-72-72z" fill="url(#g)" fill-opacity="0.12"/>
+  <text x="200" y="360" text-anchor="middle" fill="#8aa0b5" font-family="Inter, Segoe UI, Arial" font-size="14">Substitua por sua foto</text>
+</svg>
