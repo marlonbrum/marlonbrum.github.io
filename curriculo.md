@@ -43,6 +43,17 @@ Atuação como consultor e desenvolvedor independente, criando soluções de sof
 
 ---
 
+## Serviços prestados
+
+- Desenvolvimento de novas aplicações 
+- Manutenção em sistemas existentes
+- Conversão de sistemas legado
+- Melhoria de performance de aplicações: Detecção de gargalos, otimização de processos, otimização do banco de dados. 
+- Consultoria em desenvolvimento
+- Solução de problemas e falhas 
+- Treinamento individual em programação
+
+
 ## 🛠️ Habilidades Técnicas
 
 - **Backend:** ASP.NET, C#, PHP, Python  

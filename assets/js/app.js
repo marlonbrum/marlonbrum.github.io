@@ -10,19 +10,20 @@ const DATA = {
   hero: {
     greeting: { pt: "Olá, sou ", en: "Hello, I'm " },
     subtitle: {
-      pt: "Engenheiro de Software com 27 anos de experiência em desenvolvimento, liderança técnica e entrega de soluções robustas.",
-      en: "Software engineer with 27 years of experience in development, technical leadership, and delivering robust solutions.",
+      pt: "Engenheiro de Software com 27 anos de experiência em desenvolvimento, liderança técnica e entrega de soluções profissionais e confiáveis.",
+      en: "Software engineer with 27 years of experience in development, technical leadership, and delivering professional and reliable solutions.",
     }
   },
   about: {
     title: { pt: "Apresentação", en: "Presentation" },
     text: {
-      pt: "Profissional com 27 anos de experiência em desenvolvimento de software, atuando em .NET, PHP, Python e Inteligência Artificial. Trabalhei com SQL Server e MySQL, análise de sistemas e relacionamento com clientes. Minha vivência de longo prazo me permite aprender rapidamente qualquer nova tecnologia e entregar valor com consistência, seja em projetos freelance, contratos parciais ou posições em tempo integral.",
-      en: "Professional with 27 years of experience in software development, working with .NET, PHP, Python and Artificial Intelligence. I have worked with SQL Server and MySQL, systems analysis and client engagement. My long-term experience enables me to quickly learn any new technology and consistently deliver value, whether in freelance projects, part-time contracts or full-time positions.",
+      pt: "Profissional com 27 anos de experiência em desenvolvimento de software, atuando em .NET, PHP, Python e Inteligência Artificial, tanto em Front-End quanto Back-End. Trabalhei com os bancos de dados SQL Server e MySQL, além de análise de sistemas e relacionamento com clientes. Ao longo da minha carreira, desenvolvi a capacidade de aprender rapidamente novas tecnologias e entregar resultados consistentes em diferentes contextos.",
+      en: "Professional with 27 years of experience in software development, working with .NET, PHP, Python and Artificial Intelligence, both in Front-End and Back-End. I have worked with SQL Server and MySQL databases, besides systems analysis and client engagement. Throughout my career, I have developed the ability to quickly learn new technologies and deliver consistent results in different contexts.",
     },
   },
   nav: {
     about: { pt: "Sobre", en: "About" },
+  services: { pt: "Serviços", en: "Services" },
     experience: { pt: "Experiência", en: "Experience" },
     skills: { pt: "Habilidades", en: "Skills" },
     education: { pt: "Formação", en: "Education" },
@@ -32,7 +33,7 @@ const DATA = {
   cta: {
     hire: { pt: "Contratar", en: "Hire me" },
     contact: { pt: "Entrar em contato", en: "Get in touch" },
-    cv: { pt: "Ver currículo (PT-BR)", en: "View resume (PT-BR)" },
+  cv: { pt: "Ver currículo", en: "View resume" },
   },
   experience: [
     {
@@ -100,6 +101,16 @@ const DATA = {
   languages: [
     { label: { pt: "Inglês: Fluente", en: "English: Fluent" } },
   ],
+  services: [
+    { icon: "fa-solid fa-rocket", label: { pt: "Desenvolvimento de novas aplicações", en: "New application development" } },
+    { icon: "fa-solid fa-screwdriver-wrench", label: { pt: "Manutenção em sistemas existentes", en: "Maintenance of existing systems" } },
+    { icon: "fa-solid fa-retweet", label: { pt: "Conversão de sistemas legado", en: "Legacy systems migration" } },
+    { icon: "fa-solid fa-gauge-high", label: { pt: "Melhoria de performance de aplicações: Detecção de gargalos, otimização de processos, otimização do banco de dados.", en: "Application performance improvement: bottleneck detection, process optimization, database optimization." } },
+    { icon: "fa-solid fa-user-tie", label: { pt: "Consultoria em desenvolvimento", en: "Development consulting" } },
+    { icon: "fa-solid fa-bug-slash", label: { pt: "Solução de problemas e falhas", en: "Incident and bug resolution" } },
+    { icon: "fa-solid fa-chalkboard-user", label: { pt: "Treinamento individual em programação", en: "One-on-one programming training" } },
+  ],
+  servicesTitle: { pt: "Serviços prestados", en: "Services" },
   ui: {
     phone: { pt: "Telefone", en: "Phone" },
     locationLabel: { pt: "Localização", en: "Location" },
@@ -126,6 +137,7 @@ function applyI18n() {
 
   // Nav
   $('[data-i18n="nav_about"]').textContent = DATA.nav.about[state.lang];
+  $('[data-i18n="nav_services"]').textContent = DATA.nav.services[state.lang];
   $('[data-i18n="nav_experience"]').textContent = DATA.nav.experience[state.lang];
   $('[data-i18n="nav_skills"]').textContent = DATA.nav.skills[state.lang];
   $('[data-i18n="nav_education"]').textContent = DATA.nav.education[state.lang];
@@ -135,7 +147,9 @@ function applyI18n() {
   // CTAs
   $('[data-i18n="cta_hire"]').textContent = DATA.cta.hire[state.lang];
   $('[data-i18n="cta_contact"]').textContent = DATA.cta.contact[state.lang];
-  $('[data-i18n="cta_cv"]').textContent = DATA.cta.cv[state.lang];
+  const cvBtn = $('[data-i18n="cta_cv"]');
+  cvBtn.textContent = DATA.cta.cv[state.lang];
+  cvBtn.href = state.lang === 'pt' ? 'assets/cv_marlon_pt.pdf' : 'assets/cv_marlon_eng.pdf';
 
   // Hero
   $('[data-i18n="hero_greeting"]').textContent = DATA.hero.greeting[state.lang];
@@ -144,6 +158,9 @@ function applyI18n() {
   // About
   $('[data-i18n="about_title"]').textContent = DATA.about.title[state.lang];
   $('[data-i18n="about_text"]').textContent = DATA.about.text[state.lang];
+
+  // Services title
+  $('[data-i18n="services_title"]').textContent = DATA.servicesTitle[state.lang];
 
   // Footer availability
   $('[data-i18n="footer_availability"]').textContent = DATA.ui.footerAvailability[state.lang];
@@ -194,6 +211,18 @@ function renderSkills() {
   });
 }
 
+function renderServices() {
+  const grid = document.getElementById('services-grid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  DATA.services.forEach(s => {
+    const el = document.createElement('div');
+    el.className = 'service';
+    el.innerHTML = `<div class="title"><i class="${s.icon}"></i> <span>${s.label[state.lang]}</span></div>`;
+    grid.appendChild(el);
+  });
+}
+
 function renderEducation() {
   const list = $('#edu-list');
   list.innerHTML = '';
@@ -224,6 +253,7 @@ function initLangSwitcher() {
       // re-render dynamic sections first
       renderExperience();
       renderSkills();
+  renderServices();
       renderEducation();
       renderLanguages();
       // then reapply i18n labels
@@ -242,6 +272,7 @@ function boot() {
   // initial render
   renderExperience();
   renderSkills();
+  renderServices();
   renderEducation();
   renderLanguages();
   applyI18n();

@@ -116,6 +116,12 @@ img { max-width: 100%; display: block; }
 .skill { background: var(--card); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-sm); padding: 12px 14px; display: flex; align-items: center; gap: 10px; }
 .skill i { color: var(--primary); }
 
+/* Services */
+.services-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.service { background: var(--card); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-sm); padding: 14px; display: grid; gap: 8px; }
+.service .title { font-weight: 700; }
+.service i { color: var(--primary); }
+
 /* Education & Languages */
 .list { display: grid; gap: 10px; }
 .list-item { background: var(--card); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-sm); padding: 12px 14px; display: grid; gap: 2px; }
