@@ -121,6 +121,8 @@ img { max-width: 100%; display: block; }
 .service { background: var(--card); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-sm); padding: 14px; display: grid; gap: 8px; }
 .service .title { font-weight: 700; }
 .service i { color: var(--primary); }
+.service .description { margin: 6px 0 0; padding-left: 18px; color: var(--muted); }
+.service .description li { margin-bottom: 4px; }
 
 /* Education & Languages */
 .list { display: grid; gap: 10px; }
@@ -130,14 +132,31 @@ img { max-width: 100%; display: block; }
 
 /* Contact */
 .contact-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
-.contact-card { display: flex; gap: 10px; align-items: center; background: var(--card); border: 1px solid rgba(255,255,255,0.08); padding: 12px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text); }
-.contact-card i { color: var(--primary); font-size: 1.2rem; }
+.contact-card { display: flex; gap: 10px; align-items: flex-start; background: var(--card); border: 1px solid rgba(255,255,255,0.08); padding: 12px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text); }
+.contact-card i { color: var(--primary); font-size: 1.2rem; margin-top: 2px; }
 .contact-card[aria-disabled="true"] { opacity: 0.6; pointer-events: none; }
 
 .contact-card div
 {
     display: flex;
     flex-direction: column;
+}
+
+.whatsapp-note { 
+  display: flex; 
+  align-items: center; 
+  gap: 4px; 
+  margin-top: 4px; 
+  font-size: 0.85rem; 
+  color: var(--muted); 
+}
+.whatsapp-note a { 
+  color: var(--muted); 
+  text-decoration: none; 
+}
+.whatsapp-note a:hover { 
+  color: #25D366; 
+  text-decoration: underline; 
 }
 
 /* Footer */
@@ -148,4 +167,13 @@ img { max-width: 100%; display: block; }
 @media (min-width: 860px) {
   .main-nav { display: flex; }
   .hero-grid { grid-template-columns: 1.2fr 0.8fr; align-items: center; }
+
+ 
+}
+
+@media (max-width: 859px) {
+ .header-content {
+        grid-template-rows: auto auto auto;
+    grid-template-columns: auto;
+  }
 }

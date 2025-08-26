@@ -23,7 +23,7 @@ const DATA = {
   },
   nav: {
     about: { pt: "Sobre", en: "About" },
-  services: { pt: "Serviços", en: "Services" },
+    services: { pt: "Serviços", en: "Services" },
     experience: { pt: "Experiência", en: "Experience" },
     skills: { pt: "Habilidades", en: "Skills" },
     education: { pt: "Formação", en: "Education" },
@@ -33,7 +33,7 @@ const DATA = {
   cta: {
     hire: { pt: "Contratar", en: "Hire me" },
     contact: { pt: "Entrar em contato", en: "Get in touch" },
-  cv: { pt: "Ver currículo", en: "View resume" },
+    cv: { pt: "Ver currículo", en: "View resume" },
   },
   experience: [
     {
@@ -102,19 +102,60 @@ const DATA = {
     { label: { pt: "Inglês: Fluente", en: "English: Fluent" } },
   ],
   services: [
-    { icon: "fa-solid fa-rocket", label: { pt: "Desenvolvimento de novas aplicações", en: "New application development" } },
-    { icon: "fa-solid fa-screwdriver-wrench", label: { pt: "Manutenção em sistemas existentes", en: "Maintenance of existing systems" } },
-    { icon: "fa-solid fa-retweet", label: { pt: "Conversão de sistemas legado", en: "Legacy systems migration" } },
-    { icon: "fa-solid fa-gauge-high", label: { pt: "Melhoria de performance de aplicações: Detecção de gargalos, otimização de processos, otimização do banco de dados.", en: "Application performance improvement: bottleneck detection, process optimization, database optimization." } },
-    { icon: "fa-solid fa-user-tie", label: { pt: "Consultoria em desenvolvimento", en: "Development consulting" } },
-    { icon: "fa-solid fa-bug-slash", label: { pt: "Solução de problemas e falhas", en: "Incident and bug resolution" } },
+    { 
+      icon: "fa-solid fa-rocket", 
+      label: { 
+        pt: "Desenvolvimento de novas aplicações e funcionalidades", 
+        en: "Development of new applications and features" 
+      },
+      description: { 
+        pt: ["Levantamento de requisitos", "Análise e desenho da solução", "Implementação", "Testes"], 
+        en: ["Requirements gathering", "Solution analysis and design", "Implementation", "Testing"]
+      }
+    },
+    { 
+      icon: "fa-solid fa-screwdriver-wrench", 
+      label: { pt: "Manutenção em sistemas existentes", en: "Maintenance of existing systems" },
+      description: { 
+        pt: ["Identificação e correção de bugs", "Melhorias", "Adequações"], 
+        en: ["Bug identification and fixes", "Improvements", "Adaptations"]
+      }
+    },
+    { 
+      icon: "fa-solid fa-retweet", 
+      label: { pt: "Conversão de sistemas legado", en: "Legacy systems migration" },
+      description: {
+        pt: ["Conversão gradual", "Reescrita completa"],
+        en: ["Gradual migration", "Complete rewrite"]
+      }
+    },
+    { 
+      icon: "fa-solid fa-gauge-high", 
+      label: { pt: "Melhoria de performance de aplicações", en: "Application performance improvement" },
+      description: {
+        pt: ["Detecção de gargalos", "Otimização de processos", "Otimização de banco de dados"],
+        en: ["Bottleneck detection", "Process optimization", "Database optimization"]
+      }
+    },
+    { 
+      icon: "fa-solid fa-user-tie", 
+      label: { pt: "Consultoria em desenvolvimento", en: "Development consulting" } 
+    },
     { icon: "fa-solid fa-chalkboard-user", label: { pt: "Treinamento individual em programação", en: "One-on-one programming training" } },
   ],
   servicesTitle: { pt: "Serviços prestados", en: "Services" },
+  sectionTitles: {
+    experience: { pt: "Experiência", en: "Experience" },
+    skills: { pt: "Habilidades", en: "Skills" },
+    education: { pt: "Formação Acadêmica", en: "Education" },
+    languages: { pt: "Idiomas", en: "Languages" },
+    contact: { pt: "Contato", en: "Contact" }
+  },
   ui: {
     phone: { pt: "Telefone", en: "Phone" },
     locationLabel: { pt: "Localização", en: "Location" },
     usernamePlaceholder: { pt: "adicionar depois", en: "add later" },
+    whatsappLink: { pt: "Também WhatsApp", en: "Also WhatsApp" },
     footerAvailability: {
       pt: "Disponível para freelance, meio período ou tempo integral",
       en: "Available for freelance, part-time or full-time",
@@ -125,8 +166,30 @@ const DATA = {
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
+// Helper function to get URL parameter
+function getUrlParam(param) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+}
+
+// Helper function to update URL with language parameter
+function updateUrl(lang) {
+  const url = new URL(window.location);
+  url.searchParams.set('lang', lang);
+  window.history.replaceState({}, '', url);
+}
+
+// Initialize language state with URL parameter priority
+function initLanguage() {
+  const urlLang = getUrlParam('lang');
+  if (urlLang && (urlLang === 'pt' || urlLang === 'en')) {
+    return urlLang;
+  }
+  return localStorage.getItem("lang") || (navigator.language?.startsWith("pt") ? "pt" : "en");
+}
+
 const state = {
-  lang: localStorage.getItem("lang") || (navigator.language?.startsWith("pt") ? "pt" : "en"),
+  lang: initLanguage(),
 };
 
 function applyI18n() {
@@ -162,12 +225,20 @@ function applyI18n() {
   // Services title
   $('[data-i18n="services_title"]').textContent = DATA.servicesTitle[state.lang];
 
+  // Section titles
+  $('[data-i18n="exp_title"]').textContent = DATA.sectionTitles.experience[state.lang];
+  $('[data-i18n="skills_title"]').textContent = DATA.sectionTitles.skills[state.lang];
+  $('[data-i18n="edu_title"]').textContent = DATA.sectionTitles.education[state.lang];
+  $('[data-i18n="langs_title"]').textContent = DATA.sectionTitles.languages[state.lang];
+  $('[data-i18n="contact_title"]').textContent = DATA.sectionTitles.contact[state.lang];
+
   // Footer availability
   $('[data-i18n="footer_availability"]').textContent = DATA.ui.footerAvailability[state.lang];
 
   // Contact labels
   $('[data-i18n="phone"]').textContent = DATA.ui.phone[state.lang];
   $('[data-i18n="location_label"]').textContent = DATA.ui.locationLabel[state.lang];
+  $('[data-i18n="whatsapp_link"]').textContent = DATA.ui.whatsappLink[state.lang];
   $$('#contact .contact-card span[data-i18n="username_placeholder"]').forEach(el => {
     el.textContent = DATA.ui.usernamePlaceholder[state.lang];
   });
@@ -218,7 +289,19 @@ function renderServices() {
   DATA.services.forEach(s => {
     const el = document.createElement('div');
     el.className = 'service';
-    el.innerHTML = `<div class="title"><i class="${s.icon}"></i> <span>${s.label[state.lang]}</span></div>`;
+    
+    let html = `<div class="title"><i class="${s.icon}"></i> <span>${s.label[state.lang]}</span></div>`;
+    
+    // Add description list if it exists for the current language
+    if (s.description && s.description[state.lang] && s.description[state.lang].length > 0) {
+      html += '<ul class="description">';
+      s.description[state.lang].forEach(item => {
+        html += `<li>${item}</li>`;
+      });
+      html += '</ul>';
+    }
+    
+    el.innerHTML = html;
     grid.appendChild(el);
   });
 }
@@ -250,10 +333,11 @@ function initLangSwitcher() {
     btn.addEventListener('click', () => {
       state.lang = btn.dataset.lang;
       localStorage.setItem('lang', state.lang);
+      updateUrl(state.lang); // Update URL with new language
       // re-render dynamic sections first
       renderExperience();
       renderSkills();
-  renderServices();
+      renderServices();
       renderEducation();
       renderLanguages();
       // then reapply i18n labels
