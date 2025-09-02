@@ -67,8 +67,28 @@ img { max-width: 100%; display: block; }
 .main-nav a:hover { color: var(--text); }
 
 .actions { display: flex; gap: 10px; align-items: center; }
-.lang-switch { background: var(--card); padding: 4px; border-radius: 999px; box-shadow: var(--shadow); }
-.lang-btn { background: transparent; color: var(--muted); border: 0; padding: 8px 12px; border-radius: 999px; cursor: pointer; }
+.lang-switch { 
+  background: var(--card); 
+  padding: 4px; 
+  border-radius: 999px; 
+  box-shadow: var(--shadow); 
+  display: flex;
+  flex-direction: row;
+}
+.lang-btn { 
+  background: transparent; 
+  color: var(--muted); 
+  border: 0; 
+  padding: 8px 12px; 
+  border-radius: 999px; 
+  cursor: pointer; 
+  display: flex; 
+  align-items: center; 
+  gap: 6px; 
+  font-size: 0.9rem; 
+  white-space: nowrap; 
+}
+.lang-btn .flag { font-size: 1rem; }
 .lang-btn[aria-pressed="true"] { background: var(--primary-600); color: #001019; font-weight: 700; }
 
 .btn { border-radius: 999px; padding: 10px 16px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }

@@ -33,7 +33,7 @@ const DATA = {
   cta: {
     hire: { pt: "Contratar", en: "Hire me" },
     contact: { pt: "Entrar em contato", en: "Get in touch" },
-    cv: { pt: "Ver currículo", en: "View resume" },
+    cv: { pt: "Baixar currículo", en: "Download resume" },
   },
   experience: [
     {
@@ -207,8 +207,7 @@ function applyI18n() {
   $('[data-i18n="nav_languages"]').textContent = DATA.nav.languages[state.lang];
   $('[data-i18n="nav_contact"]').textContent = DATA.nav.contact[state.lang];
 
-  // CTAs
-  $('[data-i18n="cta_hire"]').textContent = DATA.cta.hire[state.lang];
+  // CTAs  
   $('[data-i18n="cta_contact"]').textContent = DATA.cta.contact[state.lang];
   const cvBtn = $('[data-i18n="cta_cv"]');
   cvBtn.textContent = DATA.cta.cv[state.lang];
@@ -237,8 +236,7 @@ function applyI18n() {
 
   // Contact labels
   $('[data-i18n="phone"]').textContent = DATA.ui.phone[state.lang];
-  $('[data-i18n="location_label"]').textContent = DATA.ui.locationLabel[state.lang];
-  $('[data-i18n="whatsapp_link"]').textContent = DATA.ui.whatsappLink[state.lang];
+  $('[data-i18n="location_label"]').textContent = DATA.ui.locationLabel[state.lang];  
   $$('#contact .contact-card span[data-i18n="username_placeholder"]').forEach(el => {
     el.textContent = DATA.ui.usernamePlaceholder[state.lang];
   });
